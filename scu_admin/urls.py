@@ -19,6 +19,7 @@ from mainsite.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', responseHome),
-    path('', responseLogin)
+    path('home/', responseHome, name='home'),
+    path('', responseLogin),
+    path('stream_response', stream_response, name='stream_response'),
 ]
