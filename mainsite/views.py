@@ -41,9 +41,12 @@ def getTable(id, passwd):
     soup = BeautifulSoup(n.text,"html.parser") #將網頁資料以html.parser
     trs = soup.find_all('tr')
     df = tableSort(trs)
-    drawTable(df)
-    
-    return HttpResponse("<img src=\"static/img/test.jpg\">")
+    drawTable1(df)
+    drawTable2(df)
+
+    template = get_template('index.html')
+    html = template.render(locals())
+    return HttpResponse(html)
 
 def tableSort(trs):
     df = pd.DataFrame(index=['1', '2', '3', '4', 'E', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D'], #處理Rows
@@ -90,7 +93,7 @@ def tableSort(trs):
         count = count + 1
     return df
 
-def drawTable(df):
+def drawTable1(df):
     image = Image.open("static/img/課表.jpg")
     draw = ImageDraw.Draw(image)
     font=ImageFont.truetype("simsun.ttc", 10)
@@ -110,3 +113,26 @@ def drawTable(df):
             c = c+1
         d = d+1
     image.save("static/img/test.jpg")
+
+def drawTable2(df):
+    image = Image.open("static/img/課表_2.jpg")
+    draw = ImageDraw.Draw(image)
+    font=ImageFont.truetype("simsun.ttc", 7)
+
+    d = 0
+    e = 0
+    for index, row in df.iterrows():
+        if index == '5':
+            e = 10
+        
+        c = 0
+        for weekday in row:
+            for i in range(len(weekday)):
+                if weekday[i].isdigit() and weekday[i+1]!='組':
+                    weekday = weekday.replace(weekday[i],'\n'+weekday[i],1)
+                    break
+            draw.text((175+(65*c), 120+(40*d)+e), weekday, font=font,fill=(0,0,0))
+            c = c+1
+        d = d+1
+
+    image.save("static/img/test2.jpg")

@@ -1,350 +1,400 @@
 {% load static %}
 <!doctype html>
 <html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>SCU Admin | 東吳課務小幫手</title>
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <link rel="icon"  href="{% static 'favicon.ico' %}" type="image/x-icon" />
 
-        <link href="{% static 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800' %}" rel="stylesheet">
-        
-        <link rel="stylesheet" href="{% static 'plugins/bootstrap/dist/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
-        <link rel="stylesheet" href="{% static 'plugins/icon-kit/dist/css/iconkit.min.css' %}">
-        <link rel="stylesheet" href="{% static 'plugins/ionicons/dist/css/ionicons.min.css' %}">
-        <link rel="stylesheet" href="{% static 'plugins/perfect-scrollbar/css/perfect-scrollbar.css' %}">
-        <link rel="stylesheet" href="{% static 'plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css' %}">
-        <link rel="stylesheet" href="{% static 'plugins/jvectormap/jquery-jvectormap.css' %}">
-        <link rel="stylesheet" href="{% static 'plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css' %}">
-        <link rel="stylesheet" href="{% static 'plugins/weather-icons/css/weather-icons.min.css' %}">
-        <link rel="stylesheet" href="{% static 'plugins/c3/c3.min.css' %}">
-        <link rel="stylesheet" href="{% static 'plugins/owl.carousel/dist/assets/owl.carousel.min.css' %}">
-        <link rel="stylesheet" href="{% static 'plugins/owl.carousel/dist/assets/owl.theme.default.min.css' %}">
-        <link rel="stylesheet" href="{% static 'dist/css/theme.min.css' %}">
-        <script src="{% static 'src/js/vendor/modernizr-2.8.3.min.js' %}"></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SCU Admin | 東吳課務小幫手</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <body>
-        <div class="wrapper">
-            <header class="header-top" header-theme="light">
-                <div class="container-fluid">
-                    <div class="d-flex justify-content-between">
-                        <div class="top-menu d-flex align-items-center">
-                            <button type="button" class="btn-icon mobile-nav-toggle d-lg-none"><span></span></button>
-                            <div class="header-search">
-                                <div class="input-group">
-                                    <span class="input-group-addon search-close"><i class="ik ik-x"></i></span>
-                                    <input type="text" class="form-control">
-                                    <span class="input-group-addon search-btn"><i class="ik ik-search"></i></span>
-                                </div>
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon" />
+
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800' %}"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/icon-kit/dist/css/iconkit.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/ionicons/dist/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/perfect-scrollbar/css/perfect-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/jvectormap/jquery-jvectormap.css' %}">
+    <link rel="stylesheet"
+        href="{% static 'plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/weather-icons/css/weather-icons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/c3/c3.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/owl.carousel/dist/assets/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/owl.carousel/dist/assets/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dist/css/theme.min.css' %}">
+    <script src="{% static 'src/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header-top" header-theme="light">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between">
+                    <div class="top-menu d-flex align-items-center">
+                        <button type="button" class="btn-icon mobile-nav-toggle d-lg-none"><span></span></button>
+                        <div class="header-search">
+                            <div class="input-group">
+                                <span class="input-group-addon search-close"><i class="ik ik-x"></i></span>
+                                <input type="text" class="form-control">
+                                <span class="input-group-addon search-btn"><i class="ik ik-search"></i></span>
                             </div>
-                            <button type="button" id="navbar-fullscreen" class="nav-link"><i class="ik ik-maximize"></i></button>
                         </div>
-                        <div class="top-menu d-flex align-items-center">                            
-                            <button type="button" class="nav-link ml-10" id="apps_modal_btn" data-toggle="modal" data-target="#appsModal"><i class="ik ik-grid"></i></button>
-                        </div>
+                        <button type="button" id="navbar-fullscreen" class="nav-link"><i
+                                class="ik ik-maximize"></i></button>
+                    </div>
+                    <div class="top-menu d-flex align-items-center">
+                        <button type="button" class="nav-link ml-10" id="apps_modal_btn" data-toggle="modal"
+                            data-target="#appsModal"><i class="ik ik-grid"></i></button>
                     </div>
                 </div>
-            </header>
+            </div>
+        </header>
 
-            <div class="page-wrap">
-                <div class="app-sidebar colored">
-                    <div class="sidebar-header">
-                        <a class="header-brand" href="index.html">
-                            <div class="logo-img">
-                               <img src="{% static 'src/img/brand-white.svg' %}" class="header-brand-img" alt="lavalite"> 
+        <div class="page-wrap">
+            <div class="app-sidebar colored">
+                <div class="sidebar-header">
+                    <a class="header-brand" href="index.html">
+                        <div class="logo-img">
+                            <img src="{% static 'src/img/brand-white.svg' %}" class="header-brand-img" alt="lavalite">
+                        </div>
+                        <span class="text">SCU Admin</span>
+                    </a>
+                    <button type="button" class="nav-toggle"><i data-toggle="expanded"
+                            class="ik ik-toggle-right toggle-icon"></i></button>
+                    <button id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></button>
+                </div>
+
+                <div class="sidebar-content">
+                    <div class="nav-container">
+                        <nav id="main-menu-navigation" class="navigation-main">
+                            <div class="nav-lavel">Navigation</div>
+                            <div class="nav-item active">
+                                <a href="index.html"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
                             </div>
-                            <span class="text">SCU Admin</span>
-                        </a>
-                        <button type="button" class="nav-toggle"><i data-toggle="expanded" class="ik ik-toggle-right toggle-icon"></i></button>
-                        <button id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></button>
-                    </div>
-                    
-                    <div class="sidebar-content">
-                        <div class="nav-container">
-                            <nav id="main-menu-navigation" class="navigation-main">
-                                <div class="nav-lavel">Navigation</div>
-                                <div class="nav-item active">
-                                    <a href="index.html"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
+                            <div class="nav-item">
+                                <a href="pages/navbar.html"><i class="ik ik-menu"></i><span>Navigation</span> <span
+                                        class="badge badge-success">New</span></a>
+                            </div>
+                            <div class="nav-item has-sub">
+                                <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>Widgets</span> <span
+                                        class="badge badge-danger">150+</span></a>
+                                <div class="submenu-content">
+                                    <a href="pages/widgets.html" class="menu-item">Basic</a>
+                                    <a href="pages/widget-statistic.html" class="menu-item">Statistic</a>
+                                    <a href="pages/widget-data.html" class="menu-item">Data</a>
+                                    <a href="pages/widget-chart.html" class="menu-item">Chart Widget</a>
                                 </div>
-                                <div class="nav-item">
-                                    <a href="pages/navbar.html"><i class="ik ik-menu"></i><span>Navigation</span> <span class="badge badge-success">New</span></a>
+                            </div>
+                            <div class="nav-lavel">UI Element</div>
+                            <div class="nav-item has-sub">
+                                <a href="#"><i class="ik ik-box"></i><span>Basic</span></a>
+                                <div class="submenu-content">
+                                    <a href="pages/ui/alerts.html" class="menu-item">Alerts</a>
+                                    <a href="pages/ui/badges.html" class="menu-item">Badges</a>
+                                    <a href="pages/ui/buttons.html" class="menu-item">Buttons</a>
+                                    <a href="pages/ui/navigation.html" class="menu-item">Navigation</a>
                                 </div>
-                                <div class="nav-item has-sub">
-                                    <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>Widgets</span> <span class="badge badge-danger">150+</span></a>
-                                    <div class="submenu-content">
-                                        <a href="pages/widgets.html" class="menu-item">Basic</a>
-                                        <a href="pages/widget-statistic.html" class="menu-item">Statistic</a>
-                                        <a href="pages/widget-data.html" class="menu-item">Data</a>
-                                        <a href="pages/widget-chart.html" class="menu-item">Chart Widget</a>
-                                    </div>
+                            </div>
+                            <div class="nav-item has-sub">
+                                <a href="#"><i class="ik ik-gitlab"></i><span>Advance</span> <span
+                                        class="badge badge-success">New</span></a>
+                                <div class="submenu-content">
+                                    <a href="pages/ui/modals.html" class="menu-item">Modals</a>
+                                    <a href="pages/ui/notifications.html" class="menu-item">Notifications</a>
+                                    <a href="pages/ui/carousel.html" class="menu-item">Slider</a>
+                                    <a href="pages/ui/range-slider.html" class="menu-item">Range Slider</a>
+                                    <a href="pages/ui/rating.html" class="menu-item">Rating</a>
                                 </div>
-                                <div class="nav-lavel">UI Element</div>
-                                <div class="nav-item has-sub">
-                                    <a href="#"><i class="ik ik-box"></i><span>Basic</span></a>
-                                    <div class="submenu-content">
-                                        <a href="pages/ui/alerts.html" class="menu-item">Alerts</a>
-                                        <a href="pages/ui/badges.html" class="menu-item">Badges</a>
-                                        <a href="pages/ui/buttons.html" class="menu-item">Buttons</a>
-                                        <a href="pages/ui/navigation.html" class="menu-item">Navigation</a>
-                                    </div>
+                            </div>
+                            <div class="nav-item has-sub">
+                                <a href="#"><i class="ik ik-package"></i><span>Extra</span></a>
+                                <div class="submenu-content">
+                                    <a href="pages/ui/session-timeout.html" class="menu-item">Session Timeout</a>
                                 </div>
-                                <div class="nav-item has-sub">
-                                    <a href="#"><i class="ik ik-gitlab"></i><span>Advance</span> <span class="badge badge-success">New</span></a>
-                                    <div class="submenu-content">
-                                        <a href="pages/ui/modals.html" class="menu-item">Modals</a>
-                                        <a href="pages/ui/notifications.html" class="menu-item">Notifications</a>
-                                        <a href="pages/ui/carousel.html" class="menu-item">Slider</a>
-                                        <a href="pages/ui/range-slider.html" class="menu-item">Range Slider</a>
-                                        <a href="pages/ui/rating.html" class="menu-item">Rating</a>
-                                    </div>
+                            </div>
+                            <div class="nav-item">
+                                <a href="pages/ui/icons.html"><i class="ik ik-command"></i><span>Icons</span></a>
+                            </div>
+                            <div class="nav-lavel">Forms</div>
+                            <div class="nav-item has-sub">
+                                <a href="#"><i class="ik ik-edit"></i><span>Forms</span></a>
+                                <div class="submenu-content">
+                                    <a href="pages/form-components.html" class="menu-item">Components</a>
+                                    <a href="pages/form-addon.html" class="menu-item">Add-On</a>
+                                    <a href="pages/form-advance.html" class="menu-item">Advance</a>
                                 </div>
-                                <div class="nav-item has-sub">
-                                    <a href="#"><i class="ik ik-package"></i><span>Extra</span></a>
-                                    <div class="submenu-content">
-                                        <a href="pages/ui/session-timeout.html" class="menu-item">Session Timeout</a>
-                                    </div>
-                                </div>
-                                <div class="nav-item">
-                                    <a href="pages/ui/icons.html"><i class="ik ik-command"></i><span>Icons</span></a>
-                                </div>
-                                <div class="nav-lavel">Forms</div>
-                                <div class="nav-item has-sub">
-                                    <a href="#"><i class="ik ik-edit"></i><span>Forms</span></a>
-                                    <div class="submenu-content">
-                                        <a href="pages/form-components.html" class="menu-item">Components</a>
-                                        <a href="pages/form-addon.html" class="menu-item">Add-On</a>
-                                        <a href="pages/form-advance.html" class="menu-item">Advance</a>
-                                    </div>
-                                </div>
-                                <div class="nav-item">
-                                    <a href="pages/form-picker.html"><i class="ik ik-terminal"></i><span>Form Picker</span> <span class="badge badge-success">New</span></a>
-                                </div>
+                            </div>
+                            <div class="nav-item">
+                                <a href="pages/form-picker.html"><i class="ik ik-terminal"></i><span>Form Picker</span>
+                                    <span class="badge badge-success">New</span></a>
+                            </div>
 
-                                <div class="nav-lavel">Tables</div>
-                                <div class="nav-item">
-                                    <a href="pages/table-bootstrap.html"><i class="ik ik-credit-card"></i><span>Bootstrap Table</span></a>
-                                </div>
-                                <div class="nav-item">
-                                    <a href="pages/table-datatable.html"><i class="ik ik-inbox"></i><span>Data Table</span></a>
-                                </div>
+                            <div class="nav-lavel">Tables</div>
+                            <div class="nav-item">
+                                <a href="pages/table-bootstrap.html"><i class="ik ik-credit-card"></i><span>Bootstrap
+                                        Table</span></a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="pages/table-datatable.html"><i class="ik ik-inbox"></i><span>Data
+                                        Table</span></a>
+                            </div>
 
-                                <div class="nav-lavel">Charts</div>
-                                <div class="nav-item has-sub">
-                                    <a href="#"><i class="ik ik-pie-chart"></i><span>Charts</span> <span class="badge badge-success">New</span></a>
-                                    <div class="submenu-content">
-                                        <a href="pages/charts-chartist.html" class="menu-item active">Chartist</a>
-                                        <a href="pages/charts-flot.html" class="menu-item">Flot</a>
-                                        <a href="pages/charts-knob.html" class="menu-item">Knob</a>
-                                        <a href="pages/charts-amcharts.html" class="menu-item">Amcharts</a>
-                                    </div>
+                            <div class="nav-lavel">Charts</div>
+                            <div class="nav-item has-sub">
+                                <a href="#"><i class="ik ik-pie-chart"></i><span>Charts</span> <span
+                                        class="badge badge-success">New</span></a>
+                                <div class="submenu-content">
+                                    <a href="pages/charts-chartist.html" class="menu-item active">Chartist</a>
+                                    <a href="pages/charts-flot.html" class="menu-item">Flot</a>
+                                    <a href="pages/charts-knob.html" class="menu-item">Knob</a>
+                                    <a href="pages/charts-amcharts.html" class="menu-item">Amcharts</a>
                                 </div>
+                            </div>
 
-                                <div class="nav-lavel">Apps</div>
-                                <div class="nav-item">
-                                    <a href="pages/calendar.html"><i class="ik ik-calendar"></i><span>Calendar</span></a>
-                                </div>
-                                <div class="nav-item">
-                                    <a href="pages/taskboard.html"><i class="ik ik-server"></i><span>Taskboard</span></a>
-                                </div>
+                            <div class="nav-lavel">Apps</div>
+                            <div class="nav-item">
+                                <a href="pages/calendar.html"><i class="ik ik-calendar"></i><span>Calendar</span></a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="pages/taskboard.html"><i class="ik ik-server"></i><span>Taskboard</span></a>
+                            </div>
 
-                                <div class="nav-lavel">Pages</div>
+                            <div class="nav-lavel">Pages</div>
 
-                                <div class="nav-item has-sub">
-                                    <a href="#"><i class="ik ik-lock"></i><span>Authentication</span></a>
-                                    <div class="submenu-content">
-                                        <a href="pages/login.html" class="menu-item">Login</a>
-                                        <a href="pages/register.html" class="menu-item">Register</a>
-                                        <a href="pages/forgot-password.html" class="menu-item">Forgot Password</a>
-                                    </div>
+                            <div class="nav-item has-sub">
+                                <a href="#"><i class="ik ik-lock"></i><span>Authentication</span></a>
+                                <div class="submenu-content">
+                                    <a href="pages/login.html" class="menu-item">Login</a>
+                                    <a href="pages/register.html" class="menu-item">Register</a>
+                                    <a href="pages/forgot-password.html" class="menu-item">Forgot Password</a>
                                 </div>
-                                <div class="nav-item has-sub">
-                                    <a href="#"><i class="ik ik-file-text"></i><span>Other</span></a>
-                                    <div class="submenu-content">
-                                        <a href="pages/profile.html" class="menu-item">Profile</a>
-                                        <a href="pages/invoice.html" class="menu-item">Invoice</a>
-                                    </div>
+                            </div>
+                            <div class="nav-item has-sub">
+                                <a href="#"><i class="ik ik-file-text"></i><span>Other</span></a>
+                                <div class="submenu-content">
+                                    <a href="pages/profile.html" class="menu-item">Profile</a>
+                                    <a href="pages/invoice.html" class="menu-item">Invoice</a>
                                 </div>
-                                <div class="nav-item">
-                                    <a href="pages/layouts.html"><i class="ik ik-layout"></i><span>Layouts</span><span class="badge badge-success">New</span></a>
-                                </div>
-                                <div class="nav-lavel">Other</div>
-                                <div class="nav-item has-sub">
-                                    <a href="javascript:void(0)"><i class="ik ik-list"></i><span>Menu Levels</span></a>
-                                    <div class="submenu-content">
-                                        <a href="javascript:void(0)" class="menu-item">Menu Level 2.1</a>
-                                        <div class="nav-item has-sub">
-                                            <a href="javascript:void(0)" class="menu-item">Menu Level 2.2</a>
-                                            <div class="submenu-content">
-                                                <a href="javascript:void(0)" class="menu-item">Menu Level 3.1</a>
-                                            </div>
+                            </div>
+                            <div class="nav-item">
+                                <a href="pages/layouts.html"><i class="ik ik-layout"></i><span>Layouts</span><span
+                                        class="badge badge-success">New</span></a>
+                            </div>
+                            <div class="nav-lavel">Other</div>
+                            <div class="nav-item has-sub">
+                                <a href="javascript:void(0)"><i class="ik ik-list"></i><span>Menu Levels</span></a>
+                                <div class="submenu-content">
+                                    <a href="javascript:void(0)" class="menu-item">Menu Level 2.1</a>
+                                    <div class="nav-item has-sub">
+                                        <a href="javascript:void(0)" class="menu-item">Menu Level 2.2</a>
+                                        <div class="submenu-content">
+                                            <a href="javascript:void(0)" class="menu-item">Menu Level 3.1</a>
                                         </div>
-                                        <a href="javascript:void(0)" class="menu-item">Menu Level 2.3</a>
                                     </div>
+                                    <a href="javascript:void(0)" class="menu-item">Menu Level 2.3</a>
                                 </div>
-                                <div class="nav-item">
-                                    <a href="javascript:void(0)" class="disabled"><i class="ik ik-slash"></i><span>Disabled Menu</span></a>
-                                </div>
-                                <div class="nav-item">
-                                    <a href="javascript:void(0)"><i class="ik ik-award"></i><span>Sample Page</span></a>
-                                </div>
-                                <div class="nav-lavel">Support</div>
-                                <div class="nav-item">
-                                    <a href="javascript:void(0)"><i class="ik ik-monitor"></i><span>Documentation</span></a>
-                                </div>
-                                <div class="nav-item">
-                                    <a href="javascript:void(0)"><i class="ik ik-help-circle"></i><span>Submit Issue</span></a>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Content -->
-                <div class="main-content">
-                    <div class="container-fluid">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="https://github.com/wutiger555/SCU_curriculum/blob/master/%E8%AA%B2%E8%A1%A8.jpg?raw=true">
                             </div>
-                        </div>
+                            <div class="nav-item">
+                                <a href="javascript:void(0)" class="disabled"><i class="ik ik-slash"></i><span>Disabled
+                                        Menu</span></a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="javascript:void(0)"><i class="ik ik-award"></i><span>Sample Page</span></a>
+                            </div>
+                            <div class="nav-lavel">Support</div>
+                            <div class="nav-item">
+                                <a href="javascript:void(0)"><i class="ik ik-monitor"></i><span>Documentation</span></a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="javascript:void(0)"><i class="ik ik-help-circle"></i><span>Submit
+                                        Issue</span></a>
+                            </div>
+                        </nav>
                     </div>
                 </div>
-
-                
-
-
-                <footer class="footer">
-                    <div class="w-100 clearfix">
-                        <span class="text-center text-sm-left d-md-inline-block">Copyright © 2018 ThemeKit v2.0. All Rights Reserved.</span>
-                        <span class="float-none float-sm-right mt-1 mt-sm-0 text-center">Crafted with <i class="fa fa-heart text-danger"></i> by <a href="http://lavalite.org/" class="text-dark" target="_blank">Lavalite</a></span>
-                    </div>
-                </footer>
-                
             </div>
-        </div>
-        
-        
-        
 
-        <div class="modal fade apps-modal" id="appsModal" tabindex="-1" role="dialog" aria-labelledby="appsModalLabel" aria-hidden="true" data-backdrop="false">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ik ik-x-circle"></i></button>
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="quick-search">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-4 ml-auto mr-auto">
-                                    <div class="input-wrap">
-                                        <input type="text" id="quick-search" class="form-control" placeholder="Search..." />
-                                        <i class="ik ik-search"></i>
+            <!-- Content -->
+            <div class="main-content">
+                <div class="container-fluid">
+                    <h5 class="mb-4">課表模板選擇</h5>
+                    <div class="row mb-4">
+                        <div class="col-md-12 mb-4 pl-0 pr-12">
+                            <div class="owl-container">
+                                <div class="owl-carousel single">
+                                    <div class="card d-flex flex-row text-center">
+                                                    <img  alt=" Thumbnail" src="{% static 'img/test.jpg' %}"
+                                        style="display:block;width:50%;margin-left: auto;margin-right: auto;"
+                                        class="align-self-center responsive d-flex justify-content-center">
+                                        <div class="card-header">
+                                            <a href="{% static 'img/test.jpg' %}" download>
+                                                <button type="button" class="btn btn-info" ><i class="ik ik-share"></i>Upload</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card d-flex flex-row">
+                                        <img alt="Thumbnail" src="{% static 'img/test2.jpg' %}"
+                                            style="display:block;width:50%;margin-left: auto;margin-right: auto;"
+                                            class="align-self-center responsive d-flex justify-content-center">
+                                        <div class="card-header">
+                                            <a href="{% static 'img/test2.jpg' %}" download>
+                                                <button type="button" class="btn btn-info"><i class="ik ik-share"></i>Upload</button>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-body d-flex align-items-center">
-                        <div class="container">
-                            <div class="apps-wrap">
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
-                                </div>
-                                <div class="app-item dropdown">
-                                    <a href="#" class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ik ik-command"></i><span>Ui</span></a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-mail"></i><span>Message</span></a>
-                                </div>
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-users"></i><span>Accounts</span></a>
-                                </div>
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-shopping-cart"></i><span>Sales</span></a>
-                                </div>
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-briefcase"></i><span>Purchase</span></a>
-                                </div>
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-server"></i><span>Menus</span></a>
-                                </div>
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-clipboard"></i><span>Pages</span></a>
-                                </div>
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-message-square"></i><span>Chats</span></a>
-                                </div>
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-map-pin"></i><span>Contacts</span></a>
-                                </div>
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-box"></i><span>Blocks</span></a>
-                                </div>
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-calendar"></i><span>Events</span></a>
-                                </div>
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-bell"></i><span>Notifications</span></a>
-                                </div>
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-pie-chart"></i><span>Reports</span></a>
-                                </div>
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-layers"></i><span>Tasks</span></a>
-                                </div>
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-edit"></i><span>Blogs</span></a>
-                                </div>
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-settings"></i><span>Settings</span></a>
-                                </div>
-                                <div class="app-item">
-                                    <a href="#"><i class="ik ik-more-horizontal"></i><span>More</span></a>
+                                <div class="slider-nav text-center">
+                                    <a href="#" class="left-arrow owl-prev">
+                                        <i class="ik ik-chevron-left"></i>
+                                    </a>
+                                    <div class="slider-dot-container"></div>
+                                    <a href="#" class="right-arrow owl-next">
+                                        <i class="ik ik-chevron-right"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            <footer class="footer">
+                <div class="w-100 clearfix">
+                    <span class="text-center text-sm-left d-md-inline-block">Copyright © 2018 ThemeKit v2.0. All Rights
+                        Reserved.</span>
+                    <span class="float-none float-sm-right mt-1 mt-sm-0 text-center">Crafted with <i
+                            class="fa fa-heart text-danger"></i> by <a href="http://lavalite.org/" class="text-dark"
+                            target="_blank">Lavalite</a></span>
+                </div>
+            </footer>
+
         </div>
-        
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script>window.jQuery || document.write('<script src="s{% static 'rc/js/vendor/jquery-3.3.1.min.js' %}"><\/script>')</script>
-        <script src="{% static 'plugins/popper.js/dist/umd/popper.min.js' %}"></script>
-        <script src="{% static 'plugins/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-        <script src="{% static 'plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js' %}"></script>
-        <script src="{% static 'plugins/screenfull/dist/screenfull.js' %}"></script>
-        <script src="{% static 'plugins/datatables.net/js/jquery.dataTables.min.js' %}"></script>
-        <script src="{% static 'plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
-        <script src="{% static 'plugins/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
-        <script src="{% static 'plugins/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
-        <script src="{% static 'plugins/jvectormap/jquery-jvectormap.min.js' %}"></script>
-        <script src="{% static 'plugins/jvectormap/tests/assets/jquery-jvectormap-world-mill-en.js' %}"></script>
-        <script src="{% static 'plugins/moment/moment.js' %}"></script>
-        <script src="{% static 'plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js' %}"></script>
-        <script src="{% static 'plugins/d3/dist/d3.min.js' %}"></script>
-        <script src="{% static 'plugins/c3/c3.min.js' %}"></script>
-        <script src="{% static 'js/tables.js' %}"></script>
-        <script src="{% static 'js/widgets.js' %}"></script>
-        <script src="{% static 'js/charts.js' %}"></script>
-        <script src="{% static 'dist/js/theme.min.js' %}"></script>
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='https://www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
-    </body>
+    </div>
+
+
+
+
+    <div class="modal fade apps-modal" id="appsModal" tabindex="-1" role="dialog" aria-labelledby="appsModalLabel"
+        aria-hidden="true" data-backdrop="false">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i
+                class="ik ik-x-circle"></i></button>
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="quick-search">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 ml-auto mr-auto">
+                                <div class="input-wrap">
+                                    <input type="text" id="quick-search" class="form-control" placeholder="Search..." />
+                                    <i class="ik ik-search"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body d-flex align-items-center">
+                    <div class="container">
+                        <div class="apps-wrap">
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
+                            </div>
+                            <div class="app-item dropdown">
+                                <a href="#" class="dropdown-toggle" role="button" id="dropdownMenuLink"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                                        class="ik ik-command"></i><span>Ui</span></a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-mail"></i><span>Message</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-users"></i><span>Accounts</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-shopping-cart"></i><span>Sales</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-briefcase"></i><span>Purchase</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-server"></i><span>Menus</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-clipboard"></i><span>Pages</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-message-square"></i><span>Chats</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-map-pin"></i><span>Contacts</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-box"></i><span>Blocks</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-calendar"></i><span>Events</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-bell"></i><span>Notifications</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-pie-chart"></i><span>Reports</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-layers"></i><span>Tasks</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-edit"></i><span>Blogs</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-settings"></i><span>Settings</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-more-horizontal"></i><span>More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="s{% static 'rc / js / vendor / jquery - 3.3.1.min.js' %}"><\/script>')</script>
+    <script src="{% static 'plugins/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js' %}"></script>
+    <script src="{% static 'plugins/screenfull/dist/screenfull.js' %}"></script>
+    <script src="{% static 'plugins/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'plugins/jvectormap/jquery-jvectormap.min.js' %}"></script>
+    <script src="{% static 'plugins/jvectormap/tests/assets/jquery-jvectormap-world-mill-en.js' %}"></script>
+    <script src="{% static 'plugins/moment/moment.js' %}"></script>
+    <script src="{% static 'plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+    <script src="{% static 'plugins/d3/dist/d3.min.js' %}"></script>
+    <script src="{% static 'plugins/c3/c3.min.js' %}"></script>
+    <script src="{% static 'js/tables.js' %}"></script>
+    <script src="{% static 'js/widgets.js' %}"></script>
+    <script src="{% static 'js/charts.js' %}"></script>
+    <script src="{% static 'dist/js/theme.min.js' %}"></script>
+    <script src="{% static 'plugins/owl.carousel/dist/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/carousel.js' %}"></script>
+
+
+</body>
+
 </html>
