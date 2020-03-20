@@ -2,6 +2,7 @@
  * ThemeKit v2.0 (http://themekit.lavalite.org/)
  * Copyright 2018 The Lavalite Authors
  */
+
 html { font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
 
 body { margin: 0; }
@@ -2256,3 +2257,12 @@ hr { box-sizing: content-box; height: 0; margin-top: 1rem; border: 0; border-top
 .swal-modal .swal-footer { text-align: center; }
 
 /*# sourceMappingURL=theme.css.map */
+
+.card-title_1{
+  font-size: 1000px;
+}
+.card .card-subtitle {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #0004ff;
+}

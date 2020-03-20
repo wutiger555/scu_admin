@@ -61,9 +61,9 @@
             <div class="app-sidebar colored">
                 <div class="sidebar-header">
                     <a class="header-brand" href="index.html">
-                        <div class="logo-img">
-                            <img src="{% static 'src/img/brand-white.svg' %}" class="header-brand-img" alt="lavalite">
-                        </div>
+                        {% comment %} <div class="logo-img">
+                            <img src="{% static 'img/favicon.ico' %}" class="header-brand-img" alt="logo">
+                        </div> {% endcomment %}
                         <span class="text">SCU Admin</span>
                     </a>
                     <button type="button" class="nav-toggle"><i data-toggle="expanded"
@@ -76,146 +76,12 @@
                         <nav id="main-menu-navigation" class="navigation-main">
                             <div class="nav-lavel">Navigation</div>
                             <div class="nav-item active">
-                                <a href="index.html"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
+                                <a href="{% url 'home' %}"><i class="ik ik-bar-chart-2"></i><span>個人資料</span></a>
                             </div>
                             <div class="nav-item">
-                                <a href="pages/navbar.html"><i class="ik ik-menu"></i><span>Navigation</span> <span
-                                        class="badge badge-success">New</span></a>
+                                <a href="{% url 'schedule' %}"><i class="ik ik-menu"></i><span>課表匯出</span></a>
                             </div>
-                            <div class="nav-item has-sub">
-                                <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>Widgets</span> <span
-                                        class="badge badge-danger">150+</span></a>
-                                <div class="submenu-content">
-                                    <a href="pages/widgets.html" class="menu-item">Basic</a>
-                                    <a href="pages/widget-statistic.html" class="menu-item">Statistic</a>
-                                    <a href="pages/widget-data.html" class="menu-item">Data</a>
-                                    <a href="pages/widget-chart.html" class="menu-item">Chart Widget</a>
-                                </div>
-                            </div>
-                            <div class="nav-lavel">UI Element</div>
-                            <div class="nav-item has-sub">
-                                <a href="#"><i class="ik ik-box"></i><span>Basic</span></a>
-                                <div class="submenu-content">
-                                    <a href="pages/ui/alerts.html" class="menu-item">Alerts</a>
-                                    <a href="pages/ui/badges.html" class="menu-item">Badges</a>
-                                    <a href="pages/ui/buttons.html" class="menu-item">Buttons</a>
-                                    <a href="pages/ui/navigation.html" class="menu-item">Navigation</a>
-                                </div>
-                            </div>
-                            <div class="nav-item has-sub">
-                                <a href="#"><i class="ik ik-gitlab"></i><span>Advance</span> <span
-                                        class="badge badge-success">New</span></a>
-                                <div class="submenu-content">
-                                    <a href="pages/ui/modals.html" class="menu-item">Modals</a>
-                                    <a href="pages/ui/notifications.html" class="menu-item">Notifications</a>
-                                    <a href="pages/ui/carousel.html" class="menu-item">Slider</a>
-                                    <a href="pages/ui/range-slider.html" class="menu-item">Range Slider</a>
-                                    <a href="pages/ui/rating.html" class="menu-item">Rating</a>
-                                </div>
-                            </div>
-                            <div class="nav-item has-sub">
-                                <a href="#"><i class="ik ik-package"></i><span>Extra</span></a>
-                                <div class="submenu-content">
-                                    <a href="pages/ui/session-timeout.html" class="menu-item">Session Timeout</a>
-                                </div>
-                            </div>
-                            <div class="nav-item">
-                                <a href="pages/ui/icons.html"><i class="ik ik-command"></i><span>Icons</span></a>
-                            </div>
-                            <div class="nav-lavel">Forms</div>
-                            <div class="nav-item has-sub">
-                                <a href="#"><i class="ik ik-edit"></i><span>Forms</span></a>
-                                <div class="submenu-content">
-                                    <a href="pages/form-components.html" class="menu-item">Components</a>
-                                    <a href="pages/form-addon.html" class="menu-item">Add-On</a>
-                                    <a href="pages/form-advance.html" class="menu-item">Advance</a>
-                                </div>
-                            </div>
-                            <div class="nav-item">
-                                <a href="pages/form-picker.html"><i class="ik ik-terminal"></i><span>Form Picker</span>
-                                    <span class="badge badge-success">New</span></a>
-                            </div>
-
-                            <div class="nav-lavel">Tables</div>
-                            <div class="nav-item">
-                                <a href="pages/table-bootstrap.html"><i class="ik ik-credit-card"></i><span>Bootstrap
-                                        Table</span></a>
-                            </div>
-                            <div class="nav-item">
-                                <a href="pages/table-datatable.html"><i class="ik ik-inbox"></i><span>Data
-                                        Table</span></a>
-                            </div>
-
-                            <div class="nav-lavel">Charts</div>
-                            <div class="nav-item has-sub">
-                                <a href="#"><i class="ik ik-pie-chart"></i><span>Charts</span> <span
-                                        class="badge badge-success">New</span></a>
-                                <div class="submenu-content">
-                                    <a href="pages/charts-chartist.html" class="menu-item active">Chartist</a>
-                                    <a href="pages/charts-flot.html" class="menu-item">Flot</a>
-                                    <a href="pages/charts-knob.html" class="menu-item">Knob</a>
-                                    <a href="pages/charts-amcharts.html" class="menu-item">Amcharts</a>
-                                </div>
-                            </div>
-
-                            <div class="nav-lavel">Apps</div>
-                            <div class="nav-item">
-                                <a href="pages/calendar.html"><i class="ik ik-calendar"></i><span>Calendar</span></a>
-                            </div>
-                            <div class="nav-item">
-                                <a href="pages/taskboard.html"><i class="ik ik-server"></i><span>Taskboard</span></a>
-                            </div>
-
-                            <div class="nav-lavel">Pages</div>
-
-                            <div class="nav-item has-sub">
-                                <a href="#"><i class="ik ik-lock"></i><span>Authentication</span></a>
-                                <div class="submenu-content">
-                                    <a href="pages/login.html" class="menu-item">Login</a>
-                                    <a href="pages/register.html" class="menu-item">Register</a>
-                                    <a href="pages/forgot-password.html" class="menu-item">Forgot Password</a>
-                                </div>
-                            </div>
-                            <div class="nav-item has-sub">
-                                <a href="#"><i class="ik ik-file-text"></i><span>Other</span></a>
-                                <div class="submenu-content">
-                                    <a href="pages/profile.html" class="menu-item">Profile</a>
-                                    <a href="pages/invoice.html" class="menu-item">Invoice</a>
-                                </div>
-                            </div>
-                            <div class="nav-item">
-                                <a href="pages/layouts.html"><i class="ik ik-layout"></i><span>Layouts</span><span
-                                        class="badge badge-success">New</span></a>
-                            </div>
-                            <div class="nav-lavel">Other</div>
-                            <div class="nav-item has-sub">
-                                <a href="javascript:void(0)"><i class="ik ik-list"></i><span>Menu Levels</span></a>
-                                <div class="submenu-content">
-                                    <a href="javascript:void(0)" class="menu-item">Menu Level 2.1</a>
-                                    <div class="nav-item has-sub">
-                                        <a href="javascript:void(0)" class="menu-item">Menu Level 2.2</a>
-                                        <div class="submenu-content">
-                                            <a href="javascript:void(0)" class="menu-item">Menu Level 3.1</a>
-                                        </div>
-                                    </div>
-                                    <a href="javascript:void(0)" class="menu-item">Menu Level 2.3</a>
-                                </div>
-                            </div>
-                            <div class="nav-item">
-                                <a href="javascript:void(0)" class="disabled"><i class="ik ik-slash"></i><span>Disabled
-                                        Menu</span></a>
-                            </div>
-                            <div class="nav-item">
-                                <a href="javascript:void(0)"><i class="ik ik-award"></i><span>Sample Page</span></a>
-                            </div>
-                            <div class="nav-lavel">Support</div>
-                            <div class="nav-item">
-                                <a href="javascript:void(0)"><i class="ik ik-monitor"></i><span>Documentation</span></a>
-                            </div>
-                            <div class="nav-item">
-                                <a href="javascript:void(0)"><i class="ik ik-help-circle"></i><span>Submit
-                                        Issue</span></a>
-                            </div>
+                            
                         </nav>
                     </div>
                 </div>
@@ -224,40 +90,142 @@
             <!-- Content -->
             <div class="main-content">
                 <div class="container-fluid">
-                    <h5 class="mb-4">課表模板選擇</h5>
-                    <div class="row mb-4">
-                        <div class="col-md-12 mb-4 pl-0 pr-12">
-                            <div class="owl-container">
-                                <div class="owl-carousel single">
-                                    <div class="card d-flex flex-row text-center">
-                                                    <img  alt=" Thumbnail" src="{% static 'img/test.jpg' %}"
-                                        style="display:block;width:50%;margin-left: auto;margin-right: auto;"
-                                        class="align-self-center responsive d-flex justify-content-center">
-                                        <div class="card-header">
-                                            <a href="{% static 'img/test.jpg' %}" download>
-                                                <button type="button" class="btn btn-info" ><i class="ik ik-share"></i>Upload</button>
-                                            </a>
+                    <div class="row">
+                            <div class="col-lg-4 col-md-5">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="text-center"> 
+                                            <img src="{% static 'img/user.jpg' %}" class="rounded-circle" width="150" />
+                                            <h1 class="card-title_1">   {{ name }}  </h4>
+                                            <p class="card-subtitle_1">班級: {{ schclass }}</p>
+                                            {% comment %} <div class="row text-center justify-content-md-center">
+                                                <div class="col-4"><a href="javascript:void(0)" class="link"><i class="ik ik-user"></i> <font class="font-medium">254</font></a></div>
+                                                <div class="col-4"><a href="javascript:void(0)" class="link"><i class="ik ik-image"></i> <font class="font-medium">54</font></a></div>
+                                            </div> {% endcomment %}
                                         </div>
                                     </div>
-                                    <div class="card d-flex flex-row">
-                                        <img alt="Thumbnail" src="{% static 'img/test2.jpg' %}"
-                                            style="display:block;width:50%;margin-left: auto;margin-right: auto;"
-                                            class="align-self-center responsive d-flex justify-content-center">
-                                        <div class="card-header">
-                                            <a href="{% static 'img/test2.jpg' %}" download>
-                                                <button type="button" class="btn btn-info"><i class="ik ik-share"></i>Upload</button>
-                                            </a>
-                                        </div>
-                                    </div>
+                                    <hr class="mb-0"> 
+                                    {% comment %} <div class="card-body"> 
+                                        <small class="text-muted d-block">Email address </small>
+                                        <h6>johndoe@admin.com</h6> 
+                                        <small class="text-muted d-block pt-10">Phone</small>
+                                        <h6>(123) 456 7890</h6> 
+                                        <small class="text-muted d-block pt-10">Address</small>
+                                        <h6>71 Pilgrim Avenue Chevy Chase, MD 20815</h6>
+                                        <div class="map-box">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.886539092!2d77.49085452149588!3d12.953959988118836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C+Karnataka!5e0!3m2!1sen!2sin!4v1542005497600" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                        </div> 
+                                        <small class="text-muted d-block pt-30">Social Profile</small>
+                                        <br/>
+                                        <button class="btn btn-icon btn-facebook"><i class="fab fa-facebook-f"></i></button>
+                                        <button class="btn btn-icon btn-twitter"><i class="fab fa-twitter"></i></button>
+                                        <button class="btn btn-icon btn-instagram"><i class="fab fa-instagram"></i></button>
+                                    </div> {% endcomment %}
                                 </div>
-                                <div class="slider-nav text-center">
-                                    <a href="#" class="left-arrow owl-prev">
-                                        <i class="ik ik-chevron-left"></i>
-                                    </a>
-                                    <div class="slider-dot-container"></div>
-                                    <a href="#" class="right-arrow owl-next">
-                                        <i class="ik ik-chevron-right"></i>
-                                    </a>
+                            </div>
+                            <div class="col-lg-8 col-md-7">
+                                <div class="card">
+                                    <ul class="nav nav-pills custom-pills" id="pills-tab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="pills-timeline-tab" data-toggle="pill" href="#current-month" role="tab" aria-controls="pills-timeline" aria-selected="true">Timeline</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#last-month" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="pills-setting-tab" data-toggle="pill" href="#previous-month" role="tab" aria-controls="pills-setting" aria-selected="false">Setting</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="current-month" role="tabpanel" aria-labelledby="pills-timeline-tab">
+                                            <div class="card-body">
+                                                <div class="profiletimeline mt-0">
+                                                    <h1>施工中</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="last-month" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-3 col-6"> <strong>Full Name</strong>
+                                                        <br>
+                                                        <p class="text-muted">Johnathan Deo</p>
+                                                    </div>
+                                                    <div class="col-md-3 col-6"> <strong>Mobile</strong>
+                                                        <br>
+                                                        <p class="text-muted">(123) 456 7890</p>
+                                                    </div>
+                                                    <div class="col-md-3 col-6"> <strong>Email</strong>
+                                                        <br>
+                                                        <p class="text-muted">johnathan@admin.com</p>
+                                                    </div>
+                                                    <div class="col-md-3 col-6"> <strong>Location</strong>
+                                                        <br>
+                                                        <p class="text-muted">London</p>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <p class="mt-30">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries </p>
+                                                <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                                <h4 class="mt-30">Skill Set</h4>
+                                                <hr>
+                                                <h6 class="mt-30">Wordpress <span class="pull-right">80%</span></h6>
+                                                <div class="progress progress-sm">
+                                                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%;"> <span class="sr-only">50% Complete</span> </div>
+                                                </div>
+                                                <h6 class="mt-30">HTML 5 <span class="pull-right">90%</span></h6>
+                                                <div class="progress  progress-sm">
+                                                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%;"> <span class="sr-only">50% Complete</span> </div>
+                                                </div>
+                                                <h6 class="mt-30">jQuery <span class="pull-right">50%</span></h6>
+                                                <div class="progress  progress-sm">
+                                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%;"> <span class="sr-only">50% Complete</span> </div>
+                                                </div>
+                                                <h6 class="mt-30">Photoshop <span class="pull-right">70%</span></h6>
+                                                <div class="progress  progress-sm">
+                                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;"> <span class="sr-only">50% Complete</span> </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="previous-month" role="tabpanel" aria-labelledby="pills-setting-tab">
+                                            <div class="card-body">
+                                                <form class="form-horizontal">
+                                                    <div class="form-group">
+                                                        <label for="example-name">Full Name</label>
+                                                        <input type="text" placeholder="Johnathan Doe" class="form-control" name="example-name" id="example-name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="example-email">Email</label>
+                                                        <input type="email" placeholder="johnathan@admin.com" class="form-control" name="example-email" id="example-email">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="example-password">Password</label>
+                                                        <input type="password" value="password" class="form-control" name="example-password" id="example-password">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="example-phone">Phone No</label>
+                                                        <input type="text" placeholder="123 456 7890" id="example-phone" name="example-phone" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="example-message">Message</label>
+                                                        <textarea name="example-message" name="example-message" rows="5" class="form-control"></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="example-country">Select Country</label>
+                                                        <select name="example-message" id="example-message" class="form-control">
+                                                            <option>London</option>
+                                                            <option>India</option>
+                                                            <option>Usa</option>
+                                                            <option>Canada</option>
+                                                            <option>Thailand</option>
+                                                        </select>
+                                                    </div>
+                                                    <button class="btn btn-success" type="submit">Update Profile</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -266,15 +234,7 @@
             </div>
 
 
-            <footer class="footer">
-                <div class="w-100 clearfix">
-                    <span class="text-center text-sm-left d-md-inline-block">Copyright © 2018 ThemeKit v2.0. All Rights
-                        Reserved.</span>
-                    <span class="float-none float-sm-right mt-1 mt-sm-0 text-center">Crafted with <i
-                            class="fa fa-heart text-danger"></i> by <a href="http://lavalite.org/" class="text-dark"
-                            target="_blank">Lavalite</a></span>
-                </div>
-            </footer>
+
 
         </div>
     </div>
@@ -300,7 +260,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-body d-flex align-items-center">
+                {% comment %} <div class="modal-body d-flex align-items-center">
                     <div class="container">
                         <div class="apps-wrap">
                             <div class="app-item">
@@ -366,7 +326,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> {% endcomment %}
             </div>
         </div>
     </div>

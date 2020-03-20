@@ -12,6 +12,8 @@ from PIL import Image, ImageDraw, ImageFont
 
 @csrf_exempt 
 def responseHome(request):
+    name = request.session['name']
+    schclass = request.session['class']
     template = get_template('index.html')
     html = template.render(locals())
     return HttpResponse(html)
@@ -19,6 +21,11 @@ def responseHome(request):
 @csrf_exempt 
 def responseLogin(request):
     template = get_template('login.html')
+    html = template.render(locals())
+    return HttpResponse(html)
+
+def responseSchedule(request):
+    template = get_template('schedule.html')
     html = template.render(locals())
     return HttpResponse(html)
 
@@ -30,23 +37,45 @@ def stream_response(request):
             # Session
             id = request.POST.get('id')
             passwd = request.POST.get('passwd')
-            # if not id in request.session:
-            #    request.session['id'] =  id
-            #    request.session['passwd'] = passwd
-            # else:
-            #     message = request.session['id'] +' 您已經登入過了!'
-            r = requests.post('https://web.sys.scu.edu.tw/login0.asp', data={'id':id,'passwd':passwd})
+            if not id in request.session:
+               request.session['id'] =  id
+               request.session['passwd'] = passwd
+            else:
+                message = request.session['id'] +' 您已經登入過了!'
+
+
+            r = requests.post('https://web.sys.scu.edu.tw/login0.asp', data={'id':request.session['id'],'passwd':request.session['passwd']})
+
             if 'Login=ok' in r.headers['Set-Cookie'] and len(id) == 8:
-                df = getTable(id, passwd)
-                m = df
-                return HttpResponse(m)
+                ary = get_info(r)
+
+                name = ary[3]
+                schclass = ary[5]
+                request.session['name'] = ary[3]
+                request.session['class'] = ary[5]
+                r.cookies.set('parselimit', 'Infinity')
+
+
+                template = get_template('index.html')
+                html = template.render(locals())
+                return HttpResponse(html)
             else:
                 template = get_template('loginFail.html')
                 html = template.render(locals())
                 return HttpResponse(html)
-            
-        
 
+
+        
+def get_info(r):
+    r.encoding = 'big5'
+    soup = BeautifulSoup(r.text, 'html.parser')
+    body = soup.body
+
+    ary = []
+    for i in body.stripped_strings:
+        ary = i.replace('：','').replace('\xa0\xa0','\xa0').replace('\xa0',' ').split(' ')
+        break
+    return ary
 
 
 # 獲得所有Sessions
@@ -69,7 +98,7 @@ def delete_session(request,key=None):
         return HttpResponse("No Such Session:" + key)
 
 def getTable(id, passwd):
-    r = requests.post('https://web.sys.scu.edu.tw/login0.asp', data={'id':id,'passwd':passwd})
+    r = requests.post('https://web.sys.scu.edu.tw/login0.asp', data={'id':request.session['id'],'passwd':request.session['passwd']})
     r.cookies.set('parselimit', 'Infinity')
     n = requests.get('https://web.sys.scu.edu.tw/SelectCar/selcar81.asp', cookies = r.cookies, data={'procsyear':'108', 'procterm':'2'})
     n.encoding = 'big5'

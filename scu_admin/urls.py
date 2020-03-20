@@ -23,5 +23,6 @@ urlpatterns = [
     path('', responseLogin,name='login'),
     path('stream_response', stream_response, name='stream_response'),
     path('get_all', get_allsessions),
-    path('delete/<key>', delete_session)
+    path('delete/<key>', delete_session),
+    path('schedule',responseSchedule, name='schedule')
 ]
