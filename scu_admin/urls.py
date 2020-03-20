@@ -20,6 +20,8 @@ from mainsite.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', responseHome, name='home'),
-    path('', responseLogin),
+    path('', responseLogin,name='login'),
     path('stream_response', stream_response, name='stream_response'),
+    path('get_all', get_allsessions),
+    path('delete/<key>', delete_session)
 ]

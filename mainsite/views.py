@@ -22,16 +22,51 @@ def responseLogin(request):
     html = template.render(locals())
     return HttpResponse(html)
 
+# login
 @csrf_exempt 
 def stream_response(request):
     if request.method == 'POST':
         if request.POST.get('id', False):
+            # Session
             id = request.POST.get('id')
             passwd = request.POST.get('passwd')
-            df = getTable(id, passwd)
-            m = df
-        return HttpResponse(m)
+            # if not id in request.session:
+            #    request.session['id'] =  id
+            #    request.session['passwd'] = passwd
+            # else:
+            #     message = request.session['id'] +' 您已經登入過了!'
+            r = requests.post('https://web.sys.scu.edu.tw/login0.asp', data={'id':id,'passwd':passwd})
+            if 'Login=ok' in r.headers['Set-Cookie'] and len(id) == 8:
+                df = getTable(id, passwd)
+                m = df
+                return HttpResponse(m)
+            else:
+                template = get_template('loginFail.html')
+                html = template.render(locals())
+                return HttpResponse(html)
+            
+        
 
+
+
+# 獲得所有Sessions
+def get_allsessions(request):
+    if request.session != None:
+        strsessions=""
+        for key1,value1 in request.session.items():
+            strsessions = strsessions + key1 +":"+ str(value1) + "<br>"
+        return HttpResponse(strsessions)
+    else:
+        return HttpResponse("Session 不存在!")
+
+# 刪除指定Sessions
+def delete_session(request,key=None):
+    if key in request.session:
+        response = HttpResponse('Delete Session: '+ key)
+        del request.session[key]
+        return response
+    else:
+        return HttpResponse("No Such Session:" + key)
 
 def getTable(id, passwd):
     r = requests.post('https://web.sys.scu.edu.tw/login0.asp', data={'id':id,'passwd':passwd})

@@ -38,17 +38,17 @@
                     <div class="col-xl-4 col-lg-6 col-md-7 my-auto p-0">
                         <div class="authentication-form mx-auto">
                             <div class="logo-centered">
-                                <a href="../index.html"><img src="../src/img/brand.svg" alt=""></a>
+                                <img src="{% static '/img/favicon.ico' %}" alt="logo">
                             </div>
                             <h3>登入東吳校務行政資訊系統</h3>
                             <p>你的東吳小幫手</p>
                             <form id="loginSection" action="{% url 'stream_response' %}" method="POST"> {% csrf_token %}
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="學號或人事代碼" required="" name="id">
+                                    <input type="text" class="form-control  is-valid" placeholder="學號或人事代碼" required="" name="id">
                                     <i class="ik ik-user"></i>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="密碼" required="" name="passwd">
+                                    <input type="password" class="form-control is-invalid" placeholder="密碼" required="" name="passwd">
                                     <i class="ik ik-lock"></i>
                                 </div>
                                 <div class="row">
